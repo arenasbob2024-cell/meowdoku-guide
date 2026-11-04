@@ -207,7 +207,7 @@ home_body = """
 <tr><td>Developer</td><td>Oakever Games</td></tr>
 <tr><td>Platforms</td><td>Android and Windows (Google Play listing; also on the Galaxy Store)</td></tr>
 <tr><td>Price</td><td>Free, with ads and optional in-app purchases</td></tr>
-<tr><td>Google Play</td><td>4.8 stars, 597K reviews, 10M+ downloads (checked 4 Nov 2026)</td></tr>
+<tr><td>Google Play</td><td>4.7 stars, 598K reviews, 10M+ downloads (checked 4 Nov 2026)</td></tr>
 <tr><td>Last store update</td><td>30 October 2026</td></tr>
 <tr><td>Core rules</td><td>One cat per coloured region, per row, per column; no cats touching, even diagonally</td></tr>
 <tr><td>Mistakes</td><td>Three hearts per level</td></tr>
