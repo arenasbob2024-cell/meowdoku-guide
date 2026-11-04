@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cat Territory: Free Meowdoku-Style Puzzle (Original Boards)</title>
+<meta name="description" content="Play an original Meowdoku-style logic puzzle in your browser: one cat per region, row and column, no touching. Unique-solution boards from 6×6 to 9×9.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://meowdoku-guide.vercel.app/practice/">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css?v=20261104">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Meowdoku Guide">
+<meta property="og:title" content="Cat Territory: Free Meowdoku-Style Puzzle (Original Boards)">
+<meta property="og:description" content="Play an original Meowdoku-style logic puzzle in your browser: one cat per region, row and column, no touching. Unique-solution boards from 6×6 to 9×9.">
+<meta property="og:url" content="https://meowdoku-guide.vercel.app/practice/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#fbf7ef">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://meowdoku-guide.vercel.app/practice/#page", "url": "https://meowdoku-guide.vercel.app/practice/", "name": "Cat Territory: Free Meowdoku-Style Puzzle (Original Boards)", "description": "Play an original Meowdoku-style logic puzzle in your browser: one cat per region, row and column, no touching. Unique-solution boards from 6×6 to 9×9.", "inLanguage": "en", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "isPartOf": {"@type": "WebSite", "@id": "https://meowdoku-guide.vercel.app/#site"}}, {"@type": "WebApplication", "@id": "https://meowdoku-guide.vercel.app/practice/#app", "name": "Cat Territory Practice", "url": "https://meowdoku-guide.vercel.app/practice/", "description": "An original browser logic puzzle: one cat per coloured region, row and column, and no touching cats, even diagonally.", "applicationCategory": "GameApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://meowdoku-guide.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Cat Territory", "item": "https://meowdoku-guide.vercel.app/practice/"}]}]}</script>
+<script src="/puzzles.js?v=20261104c" defer></script>
+<script src="/app.js?v=20261104c" defer></script>
+</head>
+<body>
+<main>
+<header class="site">
+  <a class="brand" href="/">Meowdoku <span>Guide</span></a>
+  <nav class="site" aria-label="Site"><a href="/">Home</a><a href="/practice/" aria-current="page">Play</a><a href="/how-to-play/">How to play</a><a href="/strategy/">Strategy</a><a href="/about/">About</a></nav>
+</header>
+<p class="breadcrumb"><a href="/">Home</a> › Cat Territory</p>
+<h1>Cat Territory Practice Board</h1>
+
+<p class="lede">Cat Territory is our original browser puzzle in the Meowdoku style: one cat per coloured region, one per row and column, and no cats touching — not even diagonally. Every board is generated for this site and checked to have exactly one solution. It is a practice tool, not the official Meowdoku app.</p>
+
+
+<section class="game" aria-label="Cat Territory practice puzzle">
+  <div class="game-top">
+    <div class="sizes" role="group" aria-label="Board size">
+      <button type="button" data-size="6" class="active">6×6</button>
+      <button type="button" data-size="7">7×7</button>
+      <button type="button" data-size="8">8×8</button>
+      <button type="button" data-size="9">9×9</button>
+    </div>
+  </div>
+  <div class="game-meta">
+    <span>Time: <span id="timer">0:00</span></span>
+    <span id="counter">0 / 6 cats placed</span>
+    <span id="best"></span>
+  </div>
+  <div class="board-wrap" id="boardWrap">
+    <div id="board" role="group" aria-label="Cat Territory board"></div>
+  </div>
+  <div class="board-tools">
+    <button type="button" id="newBtn">New puzzle</button>
+    <button type="button" id="checkBtn" class="ghost">Check</button>
+    <button type="button" id="hintBtn" class="ghost">Hint</button>
+    <button type="button" id="resetBtn" class="ghost">Clear marks</button>
+  </div>
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+  <div id="winBanner" hidden><strong>Solved!</strong> <span id="winText"></span></div>
+</section>
+
+<h2>How to play this board</h2>
+<ul>
+<li><b>Tap a cell</b> to cycle: empty → ✕ (not a cat) → cat → empty.</li>
+<li><b>Check</b> validates the current cats and marks rule conflicts in red. The board also checks automatically when you place the last cat.</li>
+<li><b>Hint</b> reveals one correct cat from the solution and locks it. It clears any of your cats that would conflict with the revealed answer.</li>
+<li><b>Clear marks</b> removes your marks but keeps hinted cats.</li>
+<li><b>Timer</b> starts with each new puzzle; your best time per board size is stored in your browser.</li>
+</ul>
+
+<h2>What is generated, and how</h2>
+<p>Each puzzle starts from a valid solution — one cat per row and column, with no two cats adjacent. We then grow nine connected coloured regions around that solution, one cat per region, and run a solver that counts solutions. A board is only published if the solver finds <b>exactly one</b> solution. The same generator produced the diagrams on the rules and strategy pages.</p>
+
+<h2>Practice vs the official app</h2>
+<table>
+<tr><th></th><th>This practice board</th><th>Official Meowdoku</th></tr>
+<tr><td>Price</td><td>Free, no ads, no account</td><td>Free with ads and in-app purchases</td></tr>
+<tr><td>Boards</td><td>Original 6×6–9×9 puzzles generated here</td><td>Oakever’s levels and daily puzzles</td></tr>
+<tr><td>Mistakes</td><td>No hearts; check and retry freely</td><td>Three hearts per level</td></tr>
+<tr><td>Hints</td><td>Unlimited, reveals a correct cat</td><td>App-specific</td></tr>
+<tr><td>Data</td><td>Stays in your browser</td><td>See the app’s own privacy policy</td></tr>
+</table>
+
+<h2>Tips for using it as training</h2>
+<ol>
+<li>Start on 6×6 and solve three boards without hints before moving up.</li>
+<li>Say the deduction out loud: “this region is confined to column 2, so column 2 is taken.”</li>
+<li>Use ✕ marks instead of guessing; the habit transfers directly to the app.</li>
+<li>When stuck, press Check rather than Hint. A conflict tells you which rule you misread.</li>
+<li>Once a size feels easy, move up rather than repeating the same board size for speed.</li>
+</ol>
+
+<h2>Play the official game</h2>
+<p>The official Meowdoku is published by Oakever Games on <a href="https://play.google.com/store/apps/details?id=com.oakever.meowdoku" rel="noopener nofollow">Google Play</a>. Our board follows the same public rules but is an independent implementation; scores and progress are separate.</p>
+
+
+<div class="disclaimer">Independent fan guide and original practice game. Not affiliated with, endorsed by or sponsored by Oakever Games. “Meowdoku” is the name of a game owned by its developer; all rights stay with its owner. Our Cat Territory boards are generated for this site and use no Oakever levels, artwork or assets. The official app is on Google Play and the Galaxy Store.</div>
+<footer class="site">
+  <p><a href="/about/">About &amp; editorial policy</a> · <a href="/privacy/">Privacy</a> · <a href="/how-to-play/">Rules</a> · <a href="/strategy/">Strategy</a> · <a href="/practice/">Play</a></p>
+  <p>Updated 2026-11-04. Official app: <a href="https://play.google.com/store/apps/details?id=com.oakever.meowdoku" rel="noopener nofollow">Google Play</a>.</p>
+</footer>
+</main>
+
+</body>
+</html>
