@@ -126,6 +126,7 @@ def page(slug, title, desc, h1, lede, body, faqs=None, app=False, extra_head="",
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="v3fOBTrnUxrsOgGbxsQZ7I0o6ZaDt9COHdEH5fEkBDA" />
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">
 <meta name="robots" content="index,follow">
